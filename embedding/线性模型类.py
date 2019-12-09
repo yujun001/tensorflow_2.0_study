@@ -3,15 +3,14 @@ import tensorflow as tf
 X = tf.constant([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
 y = tf.constant([[10.0], [20.0]])
 
-
 class Linear(tf.keras.Model):
     def __init__(self):
         super().__init__()
         self.dense = tf.keras.layers.Dense(
             units=1,
             activation=None,
-            kernel_initializer=tf.zeros_initializer(),
-            bias_initializer=tf.zeros_initializer()
+            kernel_initializer=tf.zeros_initializer(),  # 权重矩阵初始化
+            bias_initializer=tf.zeros_initializer()     # 偏置矩阵初始化
         )
 
     def call(self, input):
