@@ -1,4 +1,5 @@
 import tensorflow as tf
+from tensorflow import keras
 
 embedding = tf.constant(
     [
@@ -19,9 +20,9 @@ print(get_embedding1.numpy().tolist())
 
 num_classes=10
 input_x = tf.keras.Input(shape=(None,),)
-embedding_x = layers.Embedding(num_classes, 10)(input_x)
-hidden1 = layers.Dense(50,activation='relu')(embedding_x)
-output = layers.Dense(2,activation='softmax')(hidden1)
+embedding_x = tf.keras.layers.Embedding(num_classes, 10) (input_x)
+hidden1 = tf.keras.layers.Dense(50,activation='relu')(embedding_x)
+output = tf.keras.layers.Dense(2,activation='softmax')(hidden1)
 
 x_train = [2,3,4,5,8,1,6,7,2,3,4,5,8,1,6,7,2,3,4,5,8,1,6,7,2,3,4,5,8,1,6,7,2,3,4,5,8,1,6,7,2,3,4,5,8,1,6,7,2,3,4,5,8,1,6,7,2,3,4,5,8,1,6,7]
 y_train = [0,1,0,1,1,0,0,1,0,1,0,1,1,0,0,1,0,1,0,1,1,0,0,1,0,1,0,1,1,0,0,1,0,1,0,1,1,0,0,1,0,1,0,1,1,0,0,1,0,1,0,1,1,0,0,1,0,1,0,1,1,0,0,1]
@@ -32,3 +33,9 @@ model2.compile(optimizer=tf.keras.optimizers.Adam(0.001),
                loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 history = model2.fit(x_train, y_train, batch_size=4, epochs=1000, verbose=0)
+
+print(history)
+
+
+
+
