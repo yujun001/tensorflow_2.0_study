@@ -1,21 +1,37 @@
 import tensorflow as tf
 import numpy as np
 
-class MLP(tf.keras.Model):
-    """
-    多层全连接网络
-    """
+class CNN(tf.keras.Model):
     def __init__(self):
         super().__init__()
-        self.flatten = tf.keras.layers.Flatten()  # Flatten层将除第一维（batch_size, 批样本数) 以外的维度展平
-        self.dense1 = tf.keras.layers.Dense(units=100, activation=tf.nn.relu)    # 全连接层
-        self.dense2 = tf.keras.layers.Dense(units=10)                            # 全连接层
+        self.conv1 = tf.keras.layers.Conv2D(
+            filters=32,             # 卷积层神经元（卷积核）数目
+            kernel_size=[5, 5],     # 感受野大小
+            padding='same',         # padding策略（vaild 或 same）
+            activation=tf.nn.relu   # 激活函数
+        )
+        self.pool1 = tf.keras.layers.MaxPool2D(pool_size=[2, 2], strides=2)
+        self.conv2 = tf.keras.layers.Conv2D(
+            filters=64,
+            kernel_size=[5, 5],
+            padding='same',
+            activation=tf.nn.relu
+        )
+        self.pool2 = tf.keras.layers.MaxPool2D(pool_size=[2, 2], strides=2)
 
-    def call(self, inputs):  # [batch_size, 28, 28, 1]
-        x = self.flatten(inputs)  # [batch_size, 784]   #784 units 神经单元数
-        x = self.dense1(x)  # [batch_size, 100]         #100 units
-        x = self.dense2(x)  # [batch_size, 10]          #最后 10个units
-        output = tf.nn.softmax(x)       # 10维向量, 分别代表每个样本属于0-9的概率
+        self.flatten = tf.keras.layers.Reshape(target_shape=(7 * 7 * 64,))
+        self.dense1 = tf.keras.layers.Dense(units=1024, activation=tf.nn.relu)
+        self.dense2 = tf.keras.layers.Dense(units=10)
+
+    def call(self, inputs):
+        x = self.conv1(inputs)      # [batch_size, 28, 28, 32], 卷积层1, 32个units
+        x = self.pool1(x)           # [batch_size, 14, 14, 32], 池化层1
+        x = self.conv2(x)           # [batch_size, 14, 14, 64], 卷积层2
+        x = self.pool2(x)           # [batch_size, 7, 7, 64]  , 池化层2
+        x = self.flatten(x)         # [batch_size, 7 * 7 * 64], flatten层
+        x = self.dense1(x)          # [batch_size, 1024]      , 全连接层1
+        x = self.dense2(x)          # [batch_size, 10]        , 全连接层2
+        output = tf.nn.softmax(x)   # 最后输出, 经激活函数
         return output
 
 class MNISTLoader():
@@ -44,7 +60,8 @@ if __name__ == '__main__':
     batch_size = 50
     learning_rate = 0.001
 
-    model = MLP()
+    model = CNN()
+    # model = tf.keras.applications.MobileNetV2()  # 实例化预定义经典网络
     data_loader = MNISTLoader()
     optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
 
@@ -55,7 +72,6 @@ if __name__ == '__main__':
         with tf.GradientTape() as tape:
             y_pred = model(X)
             loss = tf.keras.losses.sparse_categorical_crossentropy(y_true=y,y_pred=y_pred)
-
             loss = tf.reduce_mean(loss)
             print("batch %d: loss %f" % (batch_index, loss.numpy()))
         grads = tape.gradient(loss, model.variables)

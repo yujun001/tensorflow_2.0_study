@@ -7,16 +7,14 @@ class Linear(tf.keras.Model):
     def __init__(self):
         super().__init__()
         self.dense = tf.keras.layers.Dense(
-            units=1,
-            activation=None,
+            units=1,                                    # 输出结果 1 维度
+            activation=None,                            # 无function 激活函数 f=ax+b;
             kernel_initializer=tf.zeros_initializer(),  # 权重矩阵初始化
             bias_initializer=tf.zeros_initializer()     # 偏置矩阵初始化
         )
-
     def call(self, input):
         output = self.dense(input)
         return output
-
 
 model = Linear()
 optimizer = tf.keras.optimizers.SGD(learning_rate=0.01)
@@ -28,4 +26,5 @@ for i in range(100):
     # 使用 model.variables 这一属性直接获得模型中的所有变量
     grads = tape.gradient(loss, model.variables)
     optimizer.apply_gradients(grads_and_vars=zip(grads, model.variables))
+
 print(model.variables)
