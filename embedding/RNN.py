@@ -30,29 +30,34 @@ class DataLoader():
 class RNN(tf.keras.Model):
     def __init__(self, num_chars, batch_size, seq_length):
         super().__init__()
-        self.num_chars = num_chars
-        self.seq_length = seq_length
-        self.batch_size = batch_size
+        self.num_chars = num_chars   # 字符种类数
+        self.seq_length = seq_length # 序列长度
+        self.batch_size = batch_size # 序列个数
         self.cell = tf.keras.layers.LSTMCell(units=256)
+        # 线性变换用全连接层,
         self.dense = tf.keras.layers.Dense(units=self.num_chars)
 
     def call(self, inputs, from_logits=False):
-        inputs = tf.one_hot(inputs, depth=self.num_chars)
-        # [batch_size, seq_length, num_chars]
+        inputs = tf.one_hot(inputs, depth=self.num_chars)  # [batch_size, seq_length, num_chars]
+
+        print("++++++++++++++++++++++++++++++++", inputs)
+        # RNN 单元的状态, 存入变量State 中初始化
         state = self.cell.get_initial_state(batch_size=self.batch_size, dtype=tf.float32)
+
         for t in range(self.seq_length):
             output, state = self.cell(inputs[:, t, :], state)
-        logits = self.dense(output)
+
+        logits = self.dense(output)   # RNN 单元最后一次的输出, 通过全连接层 变换到 num_chars维
         if from_logits:
             return logits
         else:
             return tf.nn.softmax(logits)
 
-    def predict(self, inputs, temperature=1.):
+    def predict(self, inputs, temperature=1.):  # temperature 参数控制分布的形状, 越大越平缓
         batch_size, _ = tf.shape(inputs)
         logits = self(inputs, from_logits=True)
         prob = tf.nn.softmax(logits / temperature).numpy()
-        return np.array([np.random.choice(self.num_chars, p=prob[i, :])
+        return np.array([np.random.choice(self.num_chars, p=prob[i, :])   # 按照生成的概率分布取样, 小概率生成, 文本丰富性
                          for i in range(batch_size.numpy())])
 
 if __name__ =='__main__':
@@ -86,15 +91,14 @@ if __name__ =='__main__':
             loss = tf.keras.losses.sparse_categorical_crossentropy(y_true=y, y_pred=y_pred)   # 交叉熵计算损失
             loss = tf.reduce_mean(loss)                                                       # 累计损失求和
             print("batch %d: loss %f" % (batch_index, loss.numpy()))                          # batch_index, 代表多少轮训练
-        grads = tape.gradient(loss, model.variables)                                          #
-        optimizer.apply_gradients(grads_and_vars=zip(grads, model.variables))                 # 损失函数的寻优计算(梯度下降计算)
+        grads = tape.gradient(loss, model.variables)                                          # 计算损失函数关于模型变量的导数
+        optimizer.apply_gradients(grads_and_vars=zip(grads, model.variables))    # 损失函数的寻优计算(梯度下降计算),
+        # 使用优化器更新模型参数, 以最小化损失函数
 
     # batches =1, 序列长度 40个;  即[1,40],[1]  数据维度统计
     X_, _ = data_loader.get_batch(seq_length, 1)
-    print(X_)
-    print(_)
 
-    for diversity in [0.2, 0.5, 1.0, 1.2]:
+    for diversity in [0.2, 0.5, 1.0, 1.2]:   # diversity 控制生成的概率分布抽样; 连续预测, 可得到文本生成;
         X = X_
         print("diversity %f:" % diversity)
         for t in range(400):
