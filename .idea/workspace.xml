@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2d7527d-013c-4654-bf36-a06a9a5be564" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/embedding/UserDefine_Model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/embedding/read" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +22,7 @@
     <SUITE FILE_PATH="coverage/tf_2_0_pratice$MLP__.coverage" NAME="MLP(多层感知器) Coverage Results" MODIFIED="1575871505859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/embedding" />
     <SUITE FILE_PATH="coverage/tf_2_0_pratice$local_req.coverage" NAME="local_req Coverage Results" MODIFIED="1576066102590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rec_sys/rec_req" />
     <SUITE FILE_PATH="coverage/tf_2_0_pratice$CNN_MobileNetV2.coverage" NAME="CNN_MobileNetV2 Coverage Results" MODIFIED="1575977022065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/embedding" />
-    <SUITE FILE_PATH="coverage/tf_2_0_pratice$DRL_Reinforcement_learning.coverage" NAME="DRL_Reinforcement_learning Coverage Results" MODIFIED="1576237610766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/embedding" />
+    <SUITE FILE_PATH="coverage/tf_2_0_pratice$DRL_Reinforcement_learning.coverage" NAME="DRL_Reinforcement_learning Coverage Results" MODIFIED="1577172848587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/embedding" />
     <SUITE FILE_PATH="coverage/tf_2_0_pratice$RNN.coverage" NAME="RNN Coverage Results" MODIFIED="1576235827830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/embedding" />
   </component>
   <component name="FileEditorManager">
@@ -32,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/embedding/embedding_lookup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="162">
               <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -45,30 +43,54 @@
         <entry file="file://$PROJECT_DIR$/embedding/read">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="273">
-                <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+              <first_editor relative-caret-position="828">
+                <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/embedding/UserDefine_Model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="1206">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/embedding/DRL_Reinforcement_learning.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-888">
+              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+              <folding>
+                <element signature="e#15#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/embedding/DRL_Reinforcement_learning.py">
+        <entry file="file://$PROJECT_DIR$/embedding/CNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="1170">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
               <folding>
-                <element signature="e#15#38#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/embedding/CNN_Convolutional_Pooling.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,11 +136,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="189" />
-    <option name="y" value="26" />
-    <option name="width" value="994" />
-    <option name="height" value="799" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="61" />
+    <option name="y" value="23" />
+    <option name="width" value="1333" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -173,7 +195,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.embedding_lookup">
+  <component name="RunManager" selected="Python.DRL_Reinforcement_learning">
     <configuration name="DRL_Reinforcement_learning" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tf_2.0_pratice" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -280,8 +302,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.embedding_lookup" />
         <item itemvalue="Python.DRL_Reinforcement_learning" />
+        <item itemvalue="Python.embedding_lookup" />
         <item itemvalue="Python.RNN" />
         <item itemvalue="Python tests.pytest in rec_req.py" />
         <item itemvalue="Python.local_req" />
@@ -299,7 +321,15 @@
       <option name="presentableId" value="Default" />
       <updated>1575777850096</updated>
       <workItem from="1575777852527" duration="47015000" />
-      <workItem from="1576498307488" duration="6413000" />
+      <workItem from="1576498307488" duration="10945000" />
+      <workItem from="1578990021787" duration="372000" />
+      <workItem from="1578991060149" duration="13001000" />
+      <workItem from="1579576238874" duration="387000" />
+      <workItem from="1581918323496" duration="617000" />
+      <workItem from="1581922856136" duration="604000" />
+      <workItem from="1582942761048" duration="536000" />
+      <workItem from="1582943770678" duration="440000" />
+      <workItem from="1582947443518" duration="467000" />
     </task>
     <servers />
   </component>
@@ -309,18 +339,18 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53428000" />
+    <option name="totallyTimeSpent" value="74384000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="189" y="26" width="994" height="799" extended-state="1" />
+    <frame x="61" y="23" width="1333" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.23389831" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22850503" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49963155" visible="true" weight="0.13578501" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49963155" weight="0.21111111" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -330,7 +360,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003685" side_tool="true" weight="0.36414567" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="11" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.34578314" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.33521923" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.23661971" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -368,16 +398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
           <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/embedding/CNN_Convolutional_Pooling.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -506,28 +526,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/embedding/embedding_lookup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="162">
           <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/embedding/DRL_Reinforcement_learning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding>
-            <element signature="e#15#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/embedding/CNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-314">
-          <caret line="39" column="7" lean-forward="true" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -537,8 +537,8 @@
     <entry file="file://$PROJECT_DIR$/embedding/read">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="273">
-            <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+          <first_editor relative-caret-position="828">
+            <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
           </first_editor>
           <second_editor />
         </state>
@@ -546,8 +546,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/embedding/UserDefine_Model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="1206">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/embedding/CNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/embedding/CNN_Convolutional_Pooling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/embedding/DRL_Reinforcement_learning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-888">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="e#15#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
