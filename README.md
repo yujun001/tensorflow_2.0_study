@@ -1,1 +1,1 @@
-# tensorflow_2.o_study
+# tensorflow_2.0_study
